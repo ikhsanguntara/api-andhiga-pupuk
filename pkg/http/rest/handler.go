@@ -35,6 +35,13 @@ func Handler(s service.Service) *gin.Engine {
 		v1.PUT("/products/:id", editProduct(s))
 		v1.DELETE("/products/:id", removeProduct(s))
 
+		// UOM
+		v1.POST("/uoms", addUom(s))
+		v1.GET("/uoms", getUoms(s))
+		v1.GET("/uoms/:id", getUom(s))
+		v1.PUT("/uoms/:id", editUom(s))
+		v1.DELETE("/uoms/:id", removeUom(s))
+
 	}
 
 	return r

@@ -20,6 +20,13 @@ type Service interface {
 	GetProduct(model.Product) (model.Product, error)
 	EditProduct(model.Product) (model.Product, error)
 	RemoveProduct(model.Product) (model.Product, error)
+
+	// Uom
+	AddUom(model.Uom) (model.Uom, error)
+	GetUoms() ([]model.Uom, error)
+	GetUom(model.Uom) (model.Uom, error)
+	EditUom(model.Uom) (model.Uom, error)
+	RemoveUom(model.Uom) (model.Uom, error)
 }
 
 type service struct {

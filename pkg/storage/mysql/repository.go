@@ -25,6 +25,12 @@ type RepositoryMySQL interface {
 	ReadProduct(model.Product) (model.Product, error)
 	UpdateProduct(model.Product) (model.Product, error)
 	DeleteProduct(model.Product) (model.Product, error)
+	// Products
+	CreateUom(model.Uom) (model.Uom, error)
+	ReadUoms() ([]model.Uom, error)
+	ReadUom(model.Uom) (model.Uom, error)
+	UpdateUom(model.Uom) (model.Uom, error)
+	DeleteUom(model.Uom) (model.Uom, error)
 }
 
 type Storage struct {
@@ -59,6 +65,7 @@ func autoMigrateDB(s *Storage) error {
 	err := s.db.AutoMigrate(
 		&model.User{},
 		&model.Product{},
+		&model.Uom{},
 	)
 
 	return err
