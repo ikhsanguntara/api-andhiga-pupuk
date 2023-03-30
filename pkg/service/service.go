@@ -27,6 +27,14 @@ type Service interface {
 	GetUom(model.Uom) (model.Uom, error)
 	EditUom(model.Uom) (model.Uom, error)
 	RemoveUom(model.Uom) (model.Uom, error)
+
+	
+	// Uom
+	AddCategories(model.Categories) (model.Categories, error)
+	GetCategoriess() ([]model.Categories, error)
+	GetCategories(model.Categories) (model.Categories, error)
+	EditCategories(model.Categories) (model.Categories, error)
+	RemoveCategories(model.Categories) (model.Categories, error)
 }
 
 type service struct {

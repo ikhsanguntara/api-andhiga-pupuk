@@ -25,12 +25,20 @@ type RepositoryMySQL interface {
 	ReadProduct(model.Product) (model.Product, error)
 	UpdateProduct(model.Product) (model.Product, error)
 	DeleteProduct(model.Product) (model.Product, error)
+
 	// Products
 	CreateUom(model.Uom) (model.Uom, error)
 	ReadUoms() ([]model.Uom, error)
 	ReadUom(model.Uom) (model.Uom, error)
 	UpdateUom(model.Uom) (model.Uom, error)
 	DeleteUom(model.Uom) (model.Uom, error)
+
+	// Categories
+	CreateCategories(model.Categories) (model.Categories, error)
+	ReadCategoriess() ([]model.Categories, error)
+	ReadCategories(model.Categories) (model.Categories, error)
+	UpdateCategories(model.Categories) (model.Categories, error)
+	DeleteCategories(model.Categories) (model.Categories, error)
 }
 
 type Storage struct {
@@ -66,6 +74,7 @@ func autoMigrateDB(s *Storage) error {
 		&model.User{},
 		&model.Product{},
 		&model.Uom{},
+		&model.Categories{},
 	)
 
 	return err
