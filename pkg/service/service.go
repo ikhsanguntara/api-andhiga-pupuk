@@ -28,8 +28,7 @@ type Service interface {
 	EditUom(model.Uom) (model.Uom, error)
 	RemoveUom(model.Uom) (model.Uom, error)
 
-	
-	// Uom
+	// Categories
 	AddCategories(model.Categories) (model.Categories, error)
 	GetCategoriess() ([]model.Categories, error)
 	GetCategories(model.Categories) (model.Categories, error)
