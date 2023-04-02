@@ -8,5 +8,6 @@ type TransactionDetail struct {
 	Description   string  `json:"description" binding:"required"`
 	Qty           float64 `json:"qty" binding:"qty" binding:"required"`
 	Price         float64 `json:"Price" binding:"Price" binding:"required"`
+	Total         float64 `json:"total" binding:"Price" binding:"required"`
 	UOM           string  `json:"uom" binding:"required"`
 }
