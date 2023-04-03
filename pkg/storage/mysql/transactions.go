@@ -8,13 +8,14 @@ import (
 )
 
 func (s *Storage) CreateTransaction(obj model.Transaction) (model.Transaction, error) {
+
 	err := s.db.Create(&obj).Error
 	if err != nil {
 		return obj, err
 	}
 
 	return obj, nil
-} 	
+}
 
 func (s *Storage) ReadTransactions() ([]model.Transaction, error) {
 	var list []model.Transaction
